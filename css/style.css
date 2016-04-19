@@ -1,0 +1,16 @@
+/* variables */
+h1 {
+  color: #006699;
+}
+p {
+  color: #009900;
+}
+/* mixins */
+p.section-a {
+  color: pink;
+  margin: 10px;
+}
+p.section-b {
+  color: pink;
+  margin: 15px;
+}

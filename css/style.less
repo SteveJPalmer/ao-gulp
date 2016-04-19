@@ -1,0 +1,26 @@
+/* variables */
+@grass: #009900;
+@sky: #006699;
+
+h1 {
+  color: @sky;
+}
+
+p {
+  color: @grass;
+}
+
+/* mixins */
+.my-mixin() {
+  color:pink;
+}
+
+p.section-a {
+  .my-mixin;
+  margin: 10px;
+}
+
+p.section-b {
+  .my-mixin;
+  margin: 15px;
+}

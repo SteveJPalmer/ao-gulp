@@ -1,9 +1,9 @@
 # ao-gulp
-cross project core gulp tasks. [AudioOrange.com](www.AudioOrange.com) :notes::tangerine:
+cross project core gulp tasks - [AudioOrange.com](http://www.AudioOrange.com) :notes::tangerine:
    
 ##  tasks overview
 
-   _Task_ - left aligned | _Description_ - Center aligned
+   _Task_ | _Description_
    :--- | :---:
    build | \(default\) clears, minifies js & cs, concatinates css
    serialisation | v3:run-sequence, v4:series\(\) method

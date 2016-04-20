@@ -11,6 +11,8 @@
     less        - compiles less files
     cssprefix   - add vendor prefixes to css
     watch       - fires less compilation task
+    lessreload  - compiles less files & livereload browser
+    watchreload - fires less compilation task & starts livereload server
     ---------
     clean       - cleans up previous build files/folders
     concat      - concat & rename files
@@ -26,7 +28,9 @@ var gulp   = require('gulp'),
     rename = require('gulp-rename'),              //rename piped file
     concat = require('gulp-concat'),              //concatenate src files
     del = require('del'),                         //remove files/dirs (rm -rf)
-    runSequence = require('run-sequence');        //run tasks in series
+    runSequence = require('run-sequence'),        //run tasks in series
+    //browser
+    livereload = require('gulp-livereload');      //browser live reloading
 
 //======================================================================
 /* default task - run with $gulp */
@@ -131,5 +135,25 @@ gulp.task('cssprefix', function () {
     // browsers: ['last 4 version', 'safari 5','ie 7', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
   }).info();
   console.log(info);
+});
+
+
+//======================================================================
+// browser - live reloading
+//======================================================================
+/* task - less compiler with livereload */
+gulp.task('lessreload', function() {
+  gulp.src('css/*.less')
+    .pipe(less())
+    .pipe(gulp.dest('css'))
+    .pipe(livereload());
+});
+
+/* task - start livereload server */
+gulp.task('watchreload', function() {
+  //start livereload server
+  livereload.listen();        //can pass option obj for host, port, page
+  //files to watch, followed by what task to run
+  gulp.watch('css/*.less', ['lessreload']);
 });
 

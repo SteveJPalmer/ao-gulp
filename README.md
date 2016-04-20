@@ -12,6 +12,9 @@ cross project core gulp tasks - [AudioOrange.com](http://www.AudioOrange.com) :n
    less | compiles less files
    cssprefix | add vendor prefixes to css
    watch | fires less compilation task
+   lessreload | compiles less files & livereload browser
+   watchreload | fires less compilation task & starts livereload server
    clean  | cleans up previous build files/folders
    concat | concat & rename files
    rename | rename files      
+ 
